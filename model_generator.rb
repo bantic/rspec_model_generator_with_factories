@@ -43,3 +43,24 @@ class ModelGenerator < Rails::Generator::NamedBase
              "Don't generation a factory file for this model") { |v| options[:skip_factories] = v}
     end
 end
+
+module Rails
+  module Generator
+    class GeneratedAttribute
+      def default_for_factory
+        @default ||= case type
+          when :integer                     then 1
+          when :float                       then 1.5
+          when :decimal                     then "9.99"
+          when :datetime, :timestamp, :time then 'Time.now'
+          when :date                        then 'Date.today'
+          when :string                      then '"MyString"'
+          when :text                        then '"MyText"'
+          when :boolean                     then false
+          else
+            ""
+        end      
+      end
+    end
+  end
+end
