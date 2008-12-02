@@ -18,11 +18,11 @@ You will still need to add `require 'factory_girl'` to your test environment. Th
 
 If you only did steps 1 and 2 of the installation:
 
-    ./script/generate model_with_factories Thing name:title description:text`
+    ./script/generate model_with_factories Thing name:title description:text
 
 If you also did step 3:
 
-    ./script/generate model Thing name:title description:text`
+    ./script/generate model Thing name:title description:text
 
 After generating the model, look in `test/factories` for your factory definition. As with fixtures in the stock model generator, you will probably want to change some of the default values.
 
