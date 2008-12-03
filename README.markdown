@@ -14,17 +14,11 @@ To install the generator as a plugin in your Rails app:
 
     ./script/plugin install git://github.com/vigetlabs/model_generator_with_factories.git
 
-If you want the generator to override the standard Rails model generator:
-
-    cd vendor/plugins/model_generator_with_factories/generators && mv model_with_factories model
-
-You can also pull the `model_with_factories` directory out of this repository and put it in `$HOME/.rails/generators` to make it available to all your present and future Rails applications. (Again, you can rename `model_with_factories` to `model` to have it override the standard Rails model generator.)
+This will override the standard Rails model generator for this application. You can also pull the `generators/model` directory out of this repository and put it in `$HOME/.rails/generators` to make it available to all your present and future Rails applications.
 
 ## Usage
 
-    ./script/generate model_with_factories Thing name:title description:text
-
-If you installed the generator such that it overrides the standard Rails model generator:
+Usage is the same as the standard Rails model generator:
 
     ./script/generate model Thing name:title description:text
 

@@ -1,4 +1,4 @@
-class ModelWithFactoriesGenerator < Rails::Generator::NamedBase
+class ModelGenerator < Rails::Generator::NamedBase
   default_options :skip_timestamps => false, :skip_migration => false, :skip_factories => false
 
   def manifest
