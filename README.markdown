@@ -10,17 +10,21 @@ You will still need to add `require 'factory_girl'` to your test environment. Th
 
 ## Installation
 
-1. Create a directory `$HOME/.rails/generators` if you have not already.
-2. Change to that directory and run `git clone git://github.com/vigetlabs/model_generator_with_factories.git model_with_factories`
-3. If you want this generator to override the standard Rails model generator, `mv model_with_factories model`
+To install the generator as a plugin in your Rails app:
+
+    ./script/plugin install git://github.com/vigetlabs/model_generator_with_factories.git
+
+If you want the generator to override the standard Rails model generator:
+
+    cd vendor/plugins/model_generator_with_factories/generators && mv model_with_factories model
+
+You can also pull the `model_with_factories` directory out of this repository and put it in `$HOME/.rails/generators` to make it available to all your present and future Rails applications. (Again, you can rename `model_with_factories` to `model` to have it override the standard Rails model generator.)
 
 ## Usage
 
-If you only did steps 1 and 2 of the installation:
-
     ./script/generate model_with_factories Thing name:title description:text
 
-If you also did step 3:
+If you installed the generator such that it overrides the standard Rails model generator:
 
     ./script/generate model Thing name:title description:text
 
