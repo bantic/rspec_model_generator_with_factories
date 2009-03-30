@@ -1,4 +1,4 @@
-class ModelGenerator < Rails::Generator::NamedBase
+class RspecModelGenerator < Rails::Generator::NamedBase
   default_options :skip_timestamps => false, :skip_migration => false, :skip_factories => false
 
   def manifest
@@ -8,13 +8,14 @@ class ModelGenerator < Rails::Generator::NamedBase
 
       # Model, test, and factories directories.
       m.directory File.join('app/models', class_path)
-      m.directory File.join('test/unit', class_path)
+      m.directory File.join('spec/models', class_path)
       m.directory File.join('test/factories', class_path)
 
-      # Model class, unit test, and factories.
+      # Model class and spec
       m.template 'model.rb',      File.join('app/models', class_path, "#{file_name}.rb")
-      m.template 'unit_test.rb',  File.join('test/unit', class_path, "#{file_name}_test.rb")
+      m.template 'model_spec.rb',  File.join('spec/models', class_path, "#{file_name}_spec.rb")
 
+      # Factories
       unless options[:skip_factories] 
        	m.template 'factories.rb',  File.join('test/factories', "#{file_name}.rb")
       end
