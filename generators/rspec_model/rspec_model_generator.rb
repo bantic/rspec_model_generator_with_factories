@@ -60,8 +60,10 @@ module Rails
           when :boolean                     then false
           else
             ""
-        end      
+        end
       end
+      alias :default_value :default_for_factory
+      
     end
   end
 end

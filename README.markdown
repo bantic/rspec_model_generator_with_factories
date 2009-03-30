@@ -1,6 +1,6 @@
 # ModelGeneratorWithFactories
 
-This is a modification of the standard Rails model generator (from Rails 2.2.2) to generate factory definitions for use with [factory_girl](http://github.com/thoughtbot/factory_girl) instead of fixtures.
+This is a modification of the standard rspec_model generator (from [http://wiki.github.com/dchelimsky/rspec/rails](Rspec_Rails gem)) to generate spec tests instead of unit tests and factory definitions for use with [factory_girl](http://github.com/thoughtbot/factory_girl) instead of fixtures.
 
 ## Requirements
 
@@ -12,17 +12,17 @@ You will still need to add `require 'factory_girl'` to your test environment. Th
 
 To install the generator as a plugin in your Rails app:
 
-    ./script/plugin install git://github.com/vigetlabs/model_generator_with_factories.git
+    ./script/plugin install git://github.com/bantic/rspec_model_generator_with_factories.git
 
-This will override the standard Rails model generator for this application. You can also pull the `generators/model` directory out of this repository and put it in `$HOME/.rails/generators` to make it available to all your present and future Rails applications.
+This will override the standard Rspec-Rails rspec_model generator for this application. You can also pull the `generators/rspec_model` directory out of this repository and put it in `$HOME/.rails/generators` to make it available to all your present and future Rails applications.
 
 ## Usage
 
 Usage is the same as the standard Rails model generator:
 
-    ./script/generate model Thing name:title description:text
+    ./script/generate rspec_model Thing name:text description:text
 
-After generating the model, look in `test/factories` for your factory definition. As with fixtures in the stock model generator, you will probably want to change some of the default values.
+After generating the model, look in `test/factories` for your factory definition and in `spec/models` for the spec.
 
 ## Author/Copyright
 
@@ -35,3 +35,7 @@ The modifications to make the generator generate factories instead of fixtures a
 Copyright (c) 2008 Mark Cornick and Viget Labs
 
 Both the original Rails code and the modifications are released under the MIT license.
+
+The modifications to make the generator generate spec tests instead of unit tests are:
+
+Copyright (c) 2009 Cory Forsyth and outside.in
